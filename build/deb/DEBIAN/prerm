@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+# Stop service if running
+if systemctl is-active --quiet alertmanager-discord; then
+    systemctl stop alertmanager-discord
+fi
+
+# Disable service if enabled
+if systemctl is-enabled --quiet alertmanager-discord; then
+    systemctl disable alertmanager-discord
+fi

@@ -1,0 +1,99 @@
+# =============================================================================
+# Alertmanager Discord Webhook Configuration
+# =============================================================================
+# This file contains configuration for the Discord webhook service
+# Copy this to /etc/alertmanager-discord/config.yml or specify path with --config
+
+# Server configuration
+server:
+  # Address to listen on (default: 127.0.0.1:9099)
+  listen_address: "127.0.0.1:9099"
+  
+  # Enable verbose logging (default: false)
+  verbose: false
+  
+  # Request timeout in seconds (default: 30)
+  timeout: 30
+
+# Discord configuration
+discord:
+  # Primary Discord webhook URL (required)
+  webhook_url: "${DISCORD_WEBHOOK}"
+  
+  # Additional webhook URLs (optional, comma-separated)
+  additional_webhooks: "${ADDITIONAL_DISCORD_WEBHOOKS}"
+  
+  # Bot username displayed in Discord (required)
+  username: "${DISCORD_USERNAME}"
+  
+  # Bot avatar URL (optional)
+  avatar_url: "${DISCORD_AVATAR_URL}"
+  
+  # Message formatting options
+  formatting:
+    # Maximum number of embeds per message (default: 2)
+    max_embeds: 2
+    
+    # Maximum description length (default: 200)
+    max_description_length: 200
+    
+    # Maximum field value length (default: 150)  
+    max_field_value_length: 150
+    
+    # Maximum title length (default: 150)
+    max_title_length: 150
+    
+    # Maximum number of labels to show (default: 4)
+    max_labels: 4
+    
+    # Rate limiting delay between messages in milliseconds (default: 200)
+    rate_limit_delay: 200
+
+# Alert processing options
+alerts:
+  # Send each alert as individual message (recommended: true)
+  individual_messages: true
+  
+  # Include resolved alerts (default: true)
+  send_resolved: true
+  
+  # Group alerts by status before sending (default: true)
+  group_by_status: true
+
+# Security options
+security:
+  # Enable webhook signature validation (optional)
+  # webhook_secret: "your-secret-key"
+  
+  # Allowed source IP addresses (optional)
+  # allowed_ips:
+  #   - "127.0.0.1"
+  #   - "10.0.0.0/8"
+  #   - "192.168.0.0/16"
+
+# Logging configuration
+logging:
+  # Log level: debug, info, warn, error (default: info)
+  level: "info"
+  
+  # Log format: text, json (default: text)
+  format: "text"
+  
+  # Log to file instead of stdout (optional)
+  # file: "/var/log/alertmanager-discord.log"
+
+# Health check configuration
+health:
+  # Enable health check endpoint at /health (default: true)
+  enabled: true
+  
+  # Health check endpoint path (default: /health)
+  endpoint: "/health"
+
+# Metrics configuration (optional)
+metrics:
+  # Enable Prometheus metrics endpoint at /metrics (default: false)
+  enabled: false
+  
+  # Metrics endpoint path (default: /metrics)
+  endpoint: "/metrics"

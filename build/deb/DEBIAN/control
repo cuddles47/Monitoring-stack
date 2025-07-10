@@ -1,0 +1,11 @@
+Package: alertmanager-discord
+Version: v1.0.1
+Section: net
+Priority: optional
+Architecture: amd64
+Maintainer: AlertManager Discord Team <noreply@example.com>
+Description: Discord webhook for Prometheus AlertManager
+ A production-ready webhook service that forwards Prometheus AlertManager
+ notifications to Discord channels with rich formatting and multiple
+ delivery options.
+Depends: systemd

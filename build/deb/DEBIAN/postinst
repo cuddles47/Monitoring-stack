@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+# Reload systemd daemon
+systemctl daemon-reload
+
+# Create alertmanager-discord user if not exists
+if ! id "alertmanager-discord" &>/dev/null; then
+    useradd --system --home-dir /var/lib/alertmanager-discord --create-home --shell /bin/false alertmanager-discord
+fi
+
+echo "AlertManager Discord installed successfully!"
+echo "Configure /etc/default/alertmanager-discord and then run:"
+echo "  sudo systemctl enable alertmanager-discord"
+echo "  sudo systemctl start alertmanager-discord"

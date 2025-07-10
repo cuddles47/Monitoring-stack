@@ -1,0 +1,42 @@
+[Unit]
+Description=Alertmanager Discord Webhook Service
+Documentation=https://github.com/rogerrum/alertmanager-discord
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=kewwi
+Group=kewwi
+WorkingDirectory=/mnt/data/projects/alertmanager-discord
+ExecStart=/mnt/data/projects/alertmanager-discord/alertmanager-discord
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=alertmanager-discord
+
+# Load environment from file
+EnvironmentFile=-/etc/default/alertmanager-discord
+
+# Security settings
+NoNewPrivileges=yes
+PrivateTmp=yes
+ProtectSystem=strict
+ProtectHome=yes
+ReadWritePaths=/mnt/data/projects/alertmanager-discord
+ProtectKernelTunables=yes
+ProtectKernelModules=yes
+ProtectControlGroups=yes
+
+# Network settings
+RestrictAddressFamilies=AF_INET AF_INET6
+RestrictNamespaces=yes
+
+# Process settings
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target
