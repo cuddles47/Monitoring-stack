@@ -25,6 +25,30 @@ A production-ready webhook service that forwards Prometheus Alertmanager notific
 
 ## 🚀 Quick Start
 
+⚠️ **Security Notice**: Never commit sensitive information like webhook URLs or API keys to version control.
+
+### Initial Setup
+
+1. **Clone and setup configuration**:
+```bash
+git clone https://github.com/rogerrum/alertmanager-discord.git
+cd alertmanager-discord
+
+# Run configuration setup script
+./setup-config.sh
+```
+
+2. **Manual configuration** (alternative):
+```bash
+# Copy template files
+cp alertmanager-discord.env.template alertmanager-discord.env
+cp alertmanager.yaml.template alertmanager.yaml
+
+# Edit with your webhook URLs
+nano alertmanager-discord.env
+nano alertmanager.yaml
+```
+
 ### Option 1: Systemd Service (Recommended)
 
 ```bash

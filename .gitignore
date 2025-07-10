@@ -59,3 +59,27 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Configuration files with sensitive data
+**/alertmanager-discord.env
+**/alertmanager.yml
+**/alertmanager.yaml
+config/production.yml
+config/production.yaml
+
+# Private keys and certificates
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Webhook URLs and API keys
+webhooks.txt
+secrets.txt
+api-keys.txt

@@ -1,4 +1,6 @@
 global:
+  resolve_timeout: 5m
+  slack_api_url: 'https://hooks.slack.com/services/YOUR_SLACK_WORKSPACE/YOUR_CHANNEL/YOUR_TOKEN'bal:
   resolve_timeout: 1m
   slack_api_url: 'https://hooks.slack.com/services/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'
 

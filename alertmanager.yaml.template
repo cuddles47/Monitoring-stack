@@ -1,5 +1,6 @@
 global:
   resolve_timeout: 5m
+  # Replace with your actual Slack webhook URL
   slack_api_url: 'https://hooks.slack.com/services/YOUR_SLACK_WORKSPACE/YOUR_CHANNEL/YOUR_TOKEN'
 
 route:
@@ -13,7 +14,7 @@ receivers:
     send_resolved: true
     icon_url: https://avatars3.githubusercontent.com/u/3380462
     title: |-
-     [{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] {{ .CommonLabels.alertname }} f>
+     [{{ .Status | toUpper }}{{ if eq .Status "firing" }}:{{ .Alerts.Firing | len }}{{ end }}] {{ .CommonLabels.alertname }} for {{ .CommonLabels.instance }}
      {{- if gt (len .CommonLabels) (len .GroupLabels) -}}
        {{" "}}(
        {{- with .CommonLabels.Remove .GroupLabels.Names }}
@@ -35,5 +36,6 @@ receivers:
        {{ end }}
      {{ end }}
   webhook_configs:
+  # Discord webhook - replace with your actual address
   - url: 'http://127.0.0.1:9099'
     send_resolved: true
