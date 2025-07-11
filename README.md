@@ -1,16 +1,10 @@
 Alertmanager Discord Webhook
 ========
 
-[![Docker Image Version (latest semver)](https://img.shields.io/docker/v/rogerrum/alertmanager-discord)](https://hub.docker.com/r/rogerrum/alertmanager-discord/tags)
-[![license](https://img.shields.io/github/license/rogerrum/alertmanager-discord)](https://github.com/rogerrum/alertmanager-discord/blob/main/LICENSE)
-[![DockerHub pulls](https://img.shields.io/docker/pulls/rogerrum/alertmanager-discord.svg)](https://hub.docker.com/r/rogerrum/alertmanager-discord/)
-[![DockerHub stars](https://img.shields.io/docker/stars/rogerrum/alertmanager-discord.svg)](https://hub.docker.com/r/rogerrum/alertmanager-discord/)
-[![GitHub stars](https://img.shields.io/github/stars/rogerrum/alertmanager-discord.svg)](https://github.com/rogerrum/alertmanager-discord)
-[![Contributors](https://img.shields.io/github/contributors/rogerrum/alertmanager-discord.svg)](https://github.com/rogerrum/alertmanager-discord/graphs/contributors)
-
 A production-ready webhook service that forwards Prometheus Alertmanager notifications to Discord channels with rich formatting, emojis, and multiple delivery options.
 
-![Discord Alert Example](https://raw.githubusercontent.com/rogerrum/alertmanager-discord/main/.github/demo-img.png)
+<img width="1215" height="832" alt="image" src="https://github.com/user-attachments/assets/938e61c6-804b-4696-b2f1-c2024c2235de" />
+
 
 ## ✨ Features
 
@@ -252,13 +246,9 @@ Production deployment includes:
 4. Push to branch: `git push origin feature/amazing-feature`
 5. Open a Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## 🙏 Acknowledgments
 
-- Original inspiration from [benjojo/alertmanager-discord](https://github.com/benjojo/alertmanager-discord)
+- Inspiration from [rogerrum/alertmanager-discord](https://github.com/rogerrum/alertmanager-discord)
 - Prometheus and Alertmanager communities
 - Discord API documentation
 
